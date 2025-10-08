@@ -212,7 +212,14 @@ class BlockingExperiments:
             self.logger.start_experiment(f'freq_rpm_{rpm}', config)
             
             session = requests.Session()
-            headers = config.DEFAULT_HEADERS.copy()
+            headers = {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+            }
             headers['User-Agent'] = self.ua.chrome
             
             for i in range(self.iterations):
@@ -259,7 +266,14 @@ class BlockingExperiments:
             self.logger.start_experiment(f'delay_{name}', config)
             
             session = requests.Session()
-            headers = config.DEFAULT_HEADERS.copy()
+            headers = {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+            }
             headers['User-Agent'] = self.ua.chrome
             
             for i in range(self.iterations):
@@ -303,7 +317,14 @@ class BlockingExperiments:
             self.logger.start_experiment(f'ua_{name}', config)
             
             session = requests.Session()
-            headers = config.DEFAULT_HEADERS.copy()
+            headers = {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+            }
             headers['User-Agent'] = user_agent
             
             iterations = min(20, self.iterations)
@@ -344,7 +365,14 @@ class BlockingExperiments:
             self.logger.start_experiment(f'session_{name}', config)
             
             persistent_session = requests.Session() if use_persistent else None
-            headers = config.DEFAULT_HEADERS.copy()
+            headers = {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+            }
             headers['User-Agent'] = self.ua.chrome
             
             for i in range(self.iterations):
@@ -389,7 +417,14 @@ class BlockingExperiments:
             else:
                 session = requests.Session()
             
-            headers = config.DEFAULT_HEADERS.copy()
+            headers = {
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+                'Accept-Language': 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'DNT': '1',
+                'Connection': 'keep-alive',
+                'Upgrade-Insecure-Requests': '1',
+            }
             headers['User-Agent'] = self.ua.chrome
             
             iterations = min(30, self.iterations)
